@@ -3,7 +3,7 @@ const DB_VERSION = 1;
 const DB_STORE_NAME = "artists";
 
 var db;
-
+// code to establish db connection
 function openDbConnection() {
   //   debugger;
   //   console.log("opening Db connection ...");
@@ -40,14 +40,14 @@ function showLabels() {
 // openDbConnection();
 
 function getObjectStore(store_name, mode) {
-  debugger;
+  //   debugger;
   var tx = db.transaction(store_name, mode);
   return tx.objectStore(store_name);
 }
 
 function addSearchedArtistNameToDB(artistName) {
-  debugger;
-  console.log("addPublication arguments:", artistName);
+  //   debugger;
+  //   console.log("addPublication arguments:", artistName);
   var obj = { name: artistName };
   var store = getObjectStore(DB_STORE_NAME, "readwrite");
   var req;
@@ -94,7 +94,7 @@ function fetchRecentSearchedArtists() {
       console.log(" cursor:", cursor);
       req = store.get(cursor.key);
       req.onsuccess = function(evt) {
-        debugger;
+        // debugger;
         var value = evt.target.result;
         var list_item = $(
           "<li>" +
@@ -105,7 +105,24 @@ function fetchRecentSearchedArtists() {
             value.name +
             ") "
         );
-        var link = $('<a href="' + cursor.key + '">' + value.name + "</a>");
+        // debugger;
+        var link = $(
+          "<p><a href=" +
+            "https://www.last.fm/music/" +
+            value.name.replace(" ", "+") +
+            " target='_blank'" +
+            ">" +
+            value.name +
+            "</a></p>"
+        );
+        // "<p><a href=" +
+        // item.url +
+        // " target='_blank'>" +
+        // item.name +
+        // " - " +
+        // "Play count : " +
+        // item.playcount +
+        // "</a></p>";
         list_item.append(link);
         pub_list.append(list_item);
       };
@@ -184,7 +201,7 @@ function searchArtist() {
             item.playcount +
             "</a></p>";
         });
-        debugger;
+        // debugger;
         $("#artistTopSongs")
           .empty()
           .append(html);

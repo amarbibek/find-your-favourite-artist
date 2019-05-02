@@ -2,10 +2,15 @@
   border: none;
 }
 
-.form-control-borderless:hover,
+/* .form-control-borderless:hover, */
 .form-control-borderless:active,
 .form-control-borderless:focus {
   border: none;
   outline: none;
   box-shadow: none;
+}
+#btn_search_artist {
+  position: relative;
+  top: -40px;
+  left: 800px;
 }
