@@ -129,7 +129,7 @@ function newViewerFrame() {
 function searchArtist() {
   let artist_name = $("#artist_name").val();
   $.getJSON(
-    "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" +
+    "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" +
       artist_name +
       "&user=bibek014&api_key=b518181c411e4aec16f39f7336937d2b&limit=10&format=json",
     function(json) {
@@ -166,7 +166,7 @@ function searchArtist() {
     }
   );
   $.getJSON(
-    "http://ws.audioscrobbler.com/2.0/?method=artist.getTopTracks&&artist=l" +
+    "https://ws.audioscrobbler.com/2.0/?method=artist.getTopTracks&&artist=l" +
       artist_name +
       "&user=bibek014&api_key=b518181c411e4aec16f39f7336937d2b&limit=10&format=json",
     function(json) {
