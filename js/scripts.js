@@ -27,6 +27,12 @@ function openDbConnection() {
 }
 function loadEvents() {
   $("#btn_search_artist").on("click", searchArtist);
+  $("#artist_name").keypress(function(event) {
+    var keycode = event.keyCode ? event.keyCode : event.which;
+    if (keycode == "13") {
+      searchArtist();
+    }
+  });
 }
 function hideLabels() {
   $("#top_songs_label").hide();
@@ -144,6 +150,7 @@ function newViewerFrame() {
 
 // code for last.fm api
 function searchArtist() {
+  //   debugger;
   let artist_name = $("#artist_name").val();
   $.getJSON(
     "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" +
