@@ -1,0 +1,29 @@
+#logo {
+  height: 100px;
+  width: auto;
+  background-color: red;
+}
+
+.company-name {
+  font-size: 50px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#login_register a {
+  font-family: "Times New Roman", Times, serif;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.remove_bullet {
+  color: #666;
+}
+.remove_bullet:hover {
+  color: grey;
+}
+
+.min-height {
+  min-height: 700px;
+}
